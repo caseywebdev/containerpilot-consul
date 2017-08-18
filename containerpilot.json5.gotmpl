@@ -1,0 +1,16 @@
+{
+  consul: 'localhost:8500',
+  jobs: [
+    {
+      name: '{{env "CONSUL_HTTP_SERVICE_NAME"}}',
+      exec: '{{env "CONTAINERPILOT_EXEC"}}',
+      restarts: 'unlimited',
+      port: 8500,
+      {{- if env "CONSUL_SERVICE_TAGS"}}
+      tags: ["{{env "CONSUL_HTTP_SERVICE_TAGS" | split "," | join "\", \""}}"],
+      {{- end}}
+      health: {exec: 'curl -fsSo /dev/null localhost:8500', interval: 5, ttl: 10},
+      consul: {deregisterCriticalServiceAfter: '10m'}
+    }
+  ]
+}
