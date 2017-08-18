@@ -1,0 +1,6 @@
+{
+  "tags": [
+    "quay.io/coderiety/containerpilot-consul:{{REF}}",
+    "quay.io/coderiety/containerpilot-consul:{{SHA}}"
+  ]
+}
