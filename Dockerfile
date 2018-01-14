@@ -1,6 +1,6 @@
-FROM consul:0.9.2
+FROM consul:1.0.2
 
-ENV CONTAINERPILOT_VERSION='3.3.4'
+ENV CONTAINERPILOT_VERSION='3.6.2'
 
 RUN \
   curl -fLsS https://github.com/joyent/containerpilot/releases/download/$CONTAINERPILOT_VERSION/containerpilot-$CONTAINERPILOT_VERSION.tar.gz | \
