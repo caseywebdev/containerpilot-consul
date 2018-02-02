@@ -1,4 +1,4 @@
-FROM consul:1.0.2
+FROM consul:1.0.3
 
 ENV CONTAINERPILOT_VERSION='3.6.2'
 
